@@ -1,5 +1,6 @@
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../database';
+import Payment from './Payment';
 
 class Creditor extends Model {
   creditor_id!: string;
@@ -34,5 +35,7 @@ Creditor.init({
   tableName: 'creditor',
   timestamps: true
 });
+
+Creditor.hasMany(Payment, { foreignKey: 'creditor_id', as: 'payment',  onUpdate: 'CASCADE', onDelete: 'CASCADE'});
 
 export default Creditor;
