@@ -33,7 +33,7 @@ Creditor.init({
 {
   sequelize,
   tableName: 'creditor',
-  timestamps: true
+  timestamps: false
 });
 
 Creditor.hasMany(Payment, { foreignKey: 'creditor_id', as: 'payment',  onUpdate: 'CASCADE', onDelete: 'CASCADE'});

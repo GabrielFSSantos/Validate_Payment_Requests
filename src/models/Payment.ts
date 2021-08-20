@@ -1,5 +1,7 @@
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../database';
+import Creditor from './Creditor';
+import Debtor from './Debtor';
 
 class Payment extends Model {
   payment_id!: string;
@@ -40,7 +42,7 @@ Payment.init({
 {
   sequelize,
   tableName: 'payment',
-  timestamps: true
+  timestamps: false
 });
 
 export default Payment;

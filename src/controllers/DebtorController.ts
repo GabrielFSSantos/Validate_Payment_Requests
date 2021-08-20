@@ -9,7 +9,7 @@ export default {
 
       const debtor = await Debtor.findOne({
         where: {
-          cpf: req.body.cnpj
+          cnpj: req.body.cnpj
         }
       });
 
@@ -67,7 +67,7 @@ export default {
   async delete(req: Request, res: Response) {
     try {
 
-      const debtor = await Debtor.findByPk(req.body.debtor_id);
+      const debtor = await Debtor.findByPk(req.params.id);
 
       if (!debtor) {
         return res.status(401).json({ error: 'Debtor not found.' });
@@ -85,7 +85,11 @@ export default {
   async show(req: Request, res: Response) {
     try {
       
-      const debtor = await Debtor.findByPk(req.body.debtor_id);
+      const debtor = await Debtor.findByPk(req.params.id, {
+        include: [
+          Debtor.associations.payment
+        ]
+      });
 
       if (!debtor) {
         return res.status(401).json({ error: 'Debtor not found.' });

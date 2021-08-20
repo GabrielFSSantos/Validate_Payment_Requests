@@ -68,7 +68,7 @@ export default {
   async delete(req: Request, res: Response) {
     try {
 
-      const creditor = await Creditor.findByPk(req.body.creditor_id);
+      const creditor = await Creditor.findByPk(req.params.id);
 
       if (!creditor) {
         return res.status(401).json({ error: 'Creditor not found.' });
@@ -86,7 +86,11 @@ export default {
   async show(req: Request, res: Response) {
     try {
       
-      const creditor = await Creditor.findByPk(req.body.creditor_id);
+      const creditor = await Creditor.findByPk(req.params.id, {
+        include: [
+          Creditor.associations.payment
+        ]
+      });
 
       if (!creditor) {
         return res.status(401).json({ error: 'Creditor not found.' });
