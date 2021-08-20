@@ -10,6 +10,7 @@
 > :wrench: Projeto criado para estudar e praticar conhecimentos de programação e teste de desenvolvimento realizado pela [Precato](https://github.com/precato). <br><br>
 
 > :books: Validate_Payment_Requests vai lhe ajudar a validar solicitações de pagamentos, que passam por verificações para determinar se devem prosseguir adiante ou não. As solicitações inválidas são recusadas e vão para um local de consulta onde um usuário autenticado pode visualizar por qual motivo a solicitação foi recusada.<br><br>
+> :man_technologist: Observação: o server foi projetado para testes, então não foi utilizado nenhum meio de autenticação e verificação de rotas, como também demais rotas de utilização criadas além da rota de criação de solicitações de pagamentos (host/payments/create) são utilizadas para realização de testes. Para utilização das rotas para testes pode ser utilizado o [Insomnia](https://insomnia.rest/) para realização de requests.<br><br>
 
 ## Requirements
 >Ter instalado pelo menos um gerenciador de pacotes do Node, [Npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/).
