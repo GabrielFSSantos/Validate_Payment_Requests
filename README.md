@@ -37,7 +37,7 @@ yarn install
 ## Use <a  name="usage"></a>
 >Executar na raiz do projeto o seguinte comando para iniciar o projeto:
 ```sh
-npm dev:server
+npm run-script dev:server
 ```
 >ou
 ```sh
@@ -53,7 +53,7 @@ yarn build
 ```
 >E logo após:
 ```sh
-npm start
+npm run-script start
 ```
 >ou
 ```sh
